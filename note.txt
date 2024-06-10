@@ -1,0 +1,15 @@
+1. 用pip install -r requirements.txt一鍵安裝所有的模組且不會有版本不合的問題
+2. 創建.env，並在裡面加入
+gp_intro_uri='你的團隊介紹網址'
+LINE_CHANNEL_ACCESS_TOKEN='你的LINE_CHANNEL_ACCESS_TOKEN'
+LINE_CHANNEL_SECRET='你的LINE_CHANNEL_SECRET'
+
+3. 到fieldtrip_db底下執行create_db.py 和 insert_db.py建立資料庫和資料表
+4. 將static資料夾放到webserver的靜態資料夾中
+5. 記得用chmod改變static資料夾中的css, 圖片檔的使用權限
+6. 若要試試看發佈，使用bash flaskrun_trial.sh <app名稱> <port位置>，例如：
+bash flaskrun_trial.sh fieldtrip 8000
+7. 若要正式發佈，使用basg flaskrun_issued.sh <app名稱> <port位置>，例如：
+bash flaskrun_issued.sh fieldtrip 8000 
+8. 要結束正式發佈，使用ps ax|grep unicorn 找到gunicorn 使用的id再用kill結束
+9. 用pip freeze > requirements.txt 將你會用到的模組寫進 requirements.txt中

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>團隊介紹</title>
+    <link rel="stylesheet" href="https://server1.mirai.tw/~s53202/static/gp_intro_style.css">
+</head>
+<body>
+    <header>
+        <h1>我們的團隊</h1>
+    </header>
+    <main>
+        <section class="team">
+            </div>
+            {% for member in members %}
+            <div class="member">
+                <img src="https://server1.mirai.tw/~s53202/static/images/{{member.image}}" alt="{{ member.name }}">
+                <h2>{{ member.name }}</h2>
+                <p>{{ member.role }}</p>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+</body>
+</html>
+
